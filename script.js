@@ -5,6 +5,8 @@ let ply1Turn = true
 var info = document.getElementById("infoBox")
 var infobtn = document.getElementById("infobtn")
 var close = document.getElementsByClassName("close")[0]
+var audio = new Audio('./sounds/roll.mp3')
+var audio2 = new Audio('./sounds/sfx-victory1.mp3')
 
 const plyr1Dice = document.getElementById('currentScoreboard1')
 const plyr2Dice = document.getElementById('currentScoreboard2')
@@ -44,6 +46,9 @@ rollBtn.addEventListener("click" , function() {
     
 
     if (ply1Turn) {
+
+        audio.play()
+
         plyr1Dice.textContent = randomNumber
         plyr1Score += randomNumber
         Scoreboard1.textContent = plyr1Score
@@ -72,10 +77,12 @@ rollBtn.addEventListener("click" , function() {
     if(plyr1Score >= 100) {
         message.textContent = "Player 1 has won"
         message.classList.add("active-2")
+        audio2.play()
         showDisplay()
     }else if(plyr2Score >= 100) {
         message.textContent = "Player 2 has won"
         message.classList.add("active-2")
+        audio2.play()
         showDisplay()
     }
 
@@ -84,6 +91,8 @@ rollBtn.addEventListener("click" , function() {
     }
 
     ply1Turn = !ply1Turn
+
+    
 })
 
 resetBtn.addEventListener('click', function(){
