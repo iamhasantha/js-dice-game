@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap" rel="stylesheet">
+    <title>The Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="infobtn"><img class="infobtn" src="img/help.png" alt="instruction"></div>
+
+    <div id="infoBox" class="info-box">
+
+        <div class="info-box-content">
+          <span class="close">&times;</span>
+          <p>Each player will get a chance to roll two dices at the same time. The process given below
+            will continues until one player reaches the winning score. </p>
+            <p>▪ If 02 dices give the same result (except the dice value 1), the same player will get 
+                another chance to roll the dice.</p>
+            <p>▪ Else other player gets the chance to roll 02 dices.</p>
+            <br>
+            <p>Calculation of score:</p>
+            <p>▪ If both dices give the value 1, individual marks of the respective player will be 
+                reduced to 0.</p>
+            <p>▪ Else sum of the two dice values will be added to individual scores of the player.</p>
+        </div>
+      
+      </div>
+
+    <div class="container">
+        <h1>The Dice Game</h1>
+        <h2 id="message">Player 1 turn</h2>
+        <div class="dice">
+            <img id="dice-1" src="img/dice-images/dice_2.png" alt="Dice">
+            <img id="dice-2" src="img/dice-images/dice_6.png" alt="Dice">
+        </div>
+
+        <div class="players">
+            <div class="player1">
+                <img id="dice-1" src="img/avatar1.png" alt="player 1" class="avatar1">
+                <div class="cont">
+                    <h3>Player 1</h3>
+                    <h2>
+                        Score:
+                        <span id="Scoreboard1">0</span>
+                    </h2>
+                    <div id="currentScoreboard1" class="score active">-</div>
+                </div>
+                 
+                <!-- <img src="img/avatar2.png" alt="player 1">
+                <p>Player 1</p> -->
+            </div>
+                
+
+            <div class="player2">
+                <img id="dice-1" src="img/avatar2.png" alt="player 1" class="avatar2">
+                <div class="cont">
+                    <h3>Player 2</h3>
+                    <h2>
+                        Score:
+                        <span id="Scoreboard2">0</span>
+                    </h2>
+                    <div id="currentScoreboard2" class="score">-</div>
+                </div>
+                
+                
+                <!-- <img src="img/avatar1.png" alt="player 2">
+                <p>Player 2</p> -->
+                
+            </div>
+        </div>
+
+        <button id="rollBtn" >
+            <span class="btn">Roll Dice</span>
+        </button>
+        <button id="resetBtn" >
+            <span class="btn">Reset</span>
+        </button>
+
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
